@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
@@ -9,7 +10,9 @@ from sklearn.metrics import mean_squared_error, r2_score
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("HousingData.csv")
+    # Dynamically find path to the CSV (works on Thonny and Streamlit Cloud)
+    file_path = os.path.join(os.path.dirname(__file__), "HousingData.csv")
+    df = pd.read_csv(file_path)
     df.replace("NA", np.nan, inplace=True)
     df = df.apply(pd.to_numeric, errors="coerce")
     df = df[df["MEDV"].notna()]
@@ -95,3 +98,4 @@ st.success(f"${prediction * 1000:,.2f} (in USD)")
 st.markdown("---")
 st.caption(f"📉 Mean Squared Error: {mse:.2f}")
 st.caption(f"✅ R² Score: {r2 * 100:.2f}%")
+
