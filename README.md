@@ -34,4 +34,36 @@ An interactive web app built with **Streamlit** to predict housing prices in Bos
 - matplotlib, seaborn
 
 
+## Task 2  
+
+🏦 **Loan Approval Prediction**
+
+A machine learning model that predicts loan approval based on applicant details using **XGBoost**. This task performs data preprocessing, feature engineering, model training, and evaluation with various visualizations to understand model behavior.
+
+
+### 📊 Features
+- 🧠 XGBoost Classifier with hyperparameter tuning
+- 🔄 Handles missing values, label encoding, and feature scaling
+- 📉 Generates:
+  - Confusion Matrix
+  - Feature Importance
+  - ROC Curve
+  - Precision-Recall Curve
+  - Learning Curve
+- ✅ Evaluates model using cross-validation
+  
+
+### 📊 Model Info
+- **Algorithm**: XGBoost Classifier  
+- **Train/Test Split**: 80/20  
+- **Cross-validation**: StratifiedKFold (5-fold)
+  
+
+### 🧰 Technologies Used
+- Python 3.11
+- pandas, numpy
+- matplotlib, seaborn
+- scikit-learn
+- xgboost
+
 
